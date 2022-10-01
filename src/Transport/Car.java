@@ -100,14 +100,6 @@ public class  Car extends Transport {
         this.typeOfRubber = typeOfRubber;
     }
 
-    public int getYearOfRelease() {
-        return getYearOfRelease();
-    }
-
-    public String getProductionCountry() {
-        return getProductionCountry();
-    }
-
     public String getBodyType() {
         return bodyType;
     }
