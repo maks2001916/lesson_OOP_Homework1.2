@@ -13,7 +13,11 @@ public class Transport {
     }
 
     public void setBodyColor(String bodyColor) {
-        this.bodyColor = bodyColor;
+        if (bodyColor != null && !bodyColor.isEmpty() && !bodyColor.isBlank()) {
+            this.bodyColor = bodyColor;
+        } else {
+            this.bodyColor = "Введено не верное значение";
+        }
     }
 
     public double getMaximumMovementSpeed() {
@@ -21,7 +25,11 @@ public class Transport {
     }
 
     public void setMaximumMovementSpeed(double maximumMovementSpeed) {
-        this.maximumMovementSpeed = maximumMovementSpeed;
+        if (maximumMovementSpeed > 0) {
+            this.maximumMovementSpeed = maximumMovementSpeed;
+        } else {
+            this.maximumMovementSpeed = 1;
+        }
     }
 
     public String getStamp() {
@@ -41,11 +49,7 @@ public class Transport {
     }
 
     public void transport() {
-        if (bodyColor == null || bodyColor.isEmpty() || bodyColor.isBlank()) {
-            System.out.println("введено не верное значение цвета");
-        }
-        if (maximumMovementSpeed <= 0) {
-            System.out.println("введено не верное значение скорости");
-        }
+
+
     }
 }
