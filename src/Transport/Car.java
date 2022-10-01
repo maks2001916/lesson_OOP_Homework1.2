@@ -3,18 +3,12 @@ package Transport;
 import java.util.regex.Pattern;
 
 public class  Car extends Transport {
-    private String stamp;  //марка
-    private String model;  //модель
     private double engineVolume;  //мощность двигателя
-    private String bodyColor;  //цвет кузова
-    private int yearOfRelease;  //год выпуска
-    private String productionCountry;  //страна - производитель
     private String transmission;  //коробка передач
     private String bodyType;  //тип кузова
     private String registrationNumber;  //регистрационный номер
     private int numberOfSeats;  //количество мест
     private String typeOfRubber;  //тип резины
-    private double maximumMovementSpeed;  //максимальная скорость передвижения
 
     public static class key {
         private String remoteEngineStart;
@@ -107,11 +101,11 @@ public class  Car extends Transport {
     }
 
     public int getYearOfRelease() {
-        return yearOfRelease;
+        return getYearOfRelease();
     }
 
     public String getProductionCountry() {
-        return productionCountry;
+        return getProductionCountry();
     }
 
     public String getBodyType() {
@@ -160,11 +154,13 @@ public class  Car extends Transport {
     }
 
     public void Car() {
-        if (productionCountry != null && !productionCountry.isEmpty() && !productionCountry.isBlank()) {;
-            productionCountry = "default";
-            System.out.println("Автомобиль " + stamp + " " + model + ", производитель - " + productionCountry);
+        if (getProductionCountry() != null && !getProductionCountry().isEmpty() &&
+                !getProductionCountry().isBlank()) {
+            System.out.println("Автомобиль " + getStamp() + " " + getModel() +
+                    ", производитель - " + getProductionCountry());
         } else {
-            System.out.println("Автомобиль " + stamp + " " + model + ", производитель - " + productionCountry);
+            System.out.println("Автомобиль " + getStamp() + " " + getModel() +
+                    ", производитель - " + getProductionCountry());
         }
 
         if (engineVolume == 0) {
@@ -173,11 +169,10 @@ public class  Car extends Transport {
         } else {
             System.out.println("имеет двигатель объёмом " + engineVolume + " л.");
         }
-        if (yearOfRelease == 0) {
-            yearOfRelease = 2000;
-            System.out.println("Выпущен в " + yearOfRelease + " году");
+        if (getYearOfRelease() == 0) {
+            System.out.println("Выпущен в 2000 году");
         } else {
-            System.out.println("Выпущен в " + yearOfRelease + " году");
+            System.out.println("Выпущен в " + getYearOfRelease() + " году");
         }
         if (transmission == null || transmission.isBlank() || transmission.isEmpty()) {
             transmission = "не указана";
