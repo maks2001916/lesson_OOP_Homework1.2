@@ -29,12 +29,6 @@ public class Main {
         Kia.Car();
         Hyungai.Car();
 
-        Lada.setInsurance = "5463728394";
-        Audi.insurance = "9173849234";
-        BMW.insurance = "759510628";
-        Kia.insurance = "680193853";
-        Hyungai.insurance = "384719473";
 
-        Lada.
     }
 }
