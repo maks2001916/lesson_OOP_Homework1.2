@@ -2,18 +2,19 @@ package Transport;
 
 import java.util.regex.Pattern;
 
-public class Car {
-    private String brand;
-    private String model;
-    double engineVolume;
-    public String color;
-    private int productionYear;
-    private String productionCountry;
-    public String transmission;
-    private String bodyType;
-    public String registrationNumber;
-    private int numberOfSeats;
-    public String typeOfRubber;
+public class  Car extends Transport {
+    private String stamp;  //марка
+    private String model;  //модель
+    private double engineVolume;  //мощность двигателя
+    private String bodyColor;  //цвет кузова
+    private int yearOfRelease;  //год выпуска
+    private String productionCountry;  //страна - производитель
+    private String transmission;  //коробка передач
+    private String bodyType;  //тип кузова
+    private String registrationNumber;  //регистрационный номер
+    private int numberOfSeats;  //количество мест
+    private String typeOfRubber;  //тип резины
+    private double maximumMovementSpeed;  //максимальная скорость передвижения
 
     public static class key {
         private String remoteEngineStart;
@@ -91,16 +92,13 @@ public class Car {
 
     }
 
-     public Car(String brand, String model, double engineVolume,
-        String color, int productionYear, String productionCountry,
-                String transmission, String bodyType, String registrationNumber
-             , int numberOfSeats, String typeOfRubber  ) {
-        this.brand = brand;
-        this.model = model;
+    public Car(String stamp, String model, double engineVolume, String bodyColor, int yearOfRelease,
+               String productionCountry, String transmission, String bodyType,
+               String registrationNumber, int numberOfSeats, String typeOfRubber,
+               double maximumMovementSpeed) {
+
+        super(stamp, model, yearOfRelease, productionCountry, bodyColor, maximumMovementSpeed);
         this.engineVolume = engineVolume;
-        this.color = color;
-        this.productionYear = productionYear;
-        this.productionCountry = productionCountry;
         this.transmission = transmission;
         this.bodyType = bodyType;
         this.registrationNumber = registrationNumber;
@@ -108,16 +106,8 @@ public class Car {
         this.typeOfRubber = typeOfRubber;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
+    public int getYearOfRelease() {
+        return yearOfRelease;
     }
 
     public String getProductionCountry() {
@@ -137,15 +127,12 @@ public class Car {
     }
 
     public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
-    }
+        if (engineVolume > 0 ) {
+            this.engineVolume = engineVolume;
+        } else {
+            this.engineVolume = 1.5;
+        }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public String getTransmission() {
@@ -173,39 +160,24 @@ public class Car {
     }
 
     public void Car() {
-        if (brand == null || model == null || productionCountry == null) {
-            brand = "default";
-            model = "default";
+        if (productionCountry != null && !productionCountry.isEmpty() && !productionCountry.isBlank()) {;
             productionCountry = "default";
-            System.out.println("Автомобиль " + brand + " " + model + ", производитель - " + productionCountry);
+            System.out.println("Автомобиль " + stamp + " " + model + ", производитель - " + productionCountry);
         } else {
-            System.out.println("Автомобиль " + brand + " " + model + ", производитель - " + productionCountry);
+            System.out.println("Автомобиль " + stamp + " " + model + ", производитель - " + productionCountry);
         }
-        if (brand == null && model == null && productionCountry == null) {
-            brand = "default";
-            model = "default";
-            productionCountry = "default";
-            System.out.println("Автомобиль " + brand + " " + model + ", производитель - " + productionCountry);
-        } else {
-            System.out.println("Автомобиль " + brand + " " + model + ", производитель - " + productionCountry);
-        }
+
         if (engineVolume == 0) {
             engineVolume = 1.5;
             System.out.println("имеет двигатель объёмом " + engineVolume + " л.");
         } else {
             System.out.println("имеет двигатель объёмом " + engineVolume + " л.");
         }
-        if (color == null) {
-            color = "белый";
-            System.out.println("Цвет кузова - " + color);
+        if (yearOfRelease == 0) {
+            yearOfRelease = 2000;
+            System.out.println("Выпущен в " + yearOfRelease + " году");
         } else {
-            System.out.println("Цвет кузова - " + color);
-        }
-        if (productionYear == 0) {
-            productionYear = 2000;
-            System.out.println("Выпущен в " + productionYear + " году");
-        } else {
-            System.out.println("Выпущен в " + productionYear + " году");
+            System.out.println("Выпущен в " + yearOfRelease + " году");
         }
         if (transmission == null || transmission.isBlank() || transmission.isEmpty()) {
             transmission = "не указана";
@@ -242,7 +214,7 @@ public class Car {
         System.out.println();
     }
 
-    private CharSequence registrationNumber(String registrationNumber) {
+    private String registrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
         return registrationNumber;
     }
