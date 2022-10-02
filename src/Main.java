@@ -1,4 +1,5 @@
 import Transport.Car;
+import Transport.Train;
 
 public class Main {
     public static void main(String[] args)
@@ -29,6 +30,16 @@ public class Main {
         Kia.Car();
         Hyungai.Car();
 
+        Train Lastohka = new Train(3500, 3, "Белорусский вокзал",
+                "Минск-пассаажирский", 11, "Lastohka",
+                "B-901", 2011, "Россия", "белый",
+                301);
+        Train Leningrad = new Train(1700, 1.3, "Ленинградский вокзал",
+                "Ленинград-пассаажирский", 8, "Leningrad",
+                "D-125", 2019, "Россия", "синий",
+                270);
 
+        Lastohka.trains();
+        Leningrad.trains();
     }
 }

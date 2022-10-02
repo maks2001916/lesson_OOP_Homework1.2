@@ -2,7 +2,7 @@ package Transport;
 
 public class Train extends Transport {
     private int fare; //плата за проезд
-    private int TravelTime;  //Время поездки
+    private double TravelTime;  //Время поездки
     private String NameOfTheDepartureStation;  //Название станции отбытия
     private String FinalStop;  //Конечная остановка
     private int NumberOfWagons;  //Количество вагонов
@@ -14,20 +14,19 @@ public class Train extends Transport {
     public void setFare(int fare) {
         if (fare > 0) {
             this.fare = fare;
-            System.out.println("плата за проезд - " + fare + "руб.");
         } else {
             System.out.println("введено неверное значение");
         }
     }
 
-    public int getTravelTime() {
+    public double getTravelTime() {
         return TravelTime;
     }
 
     public void setTravelTime(int travelTime) {
         if (travelTime > 0) {
             this.TravelTime = travelTime;
-            System.out.println("время поездки - " + travelTime + " мин.");
+
         } else {
             System.out.println("введено неверное значение");
         }
@@ -41,7 +40,6 @@ public class Train extends Transport {
         if (nameOfTheDepartureStation != null && !nameOfTheDepartureStation.isBlank()
                 && !nameOfTheDepartureStation.isEmpty()) {
             this.NameOfTheDepartureStation = nameOfTheDepartureStation;
-            System.out.println("название станции отбытия - " + nameOfTheDepartureStation);
         } else {
             System.out.println("введено неверное значение");
         }
@@ -55,7 +53,6 @@ public class Train extends Transport {
     public void setFinalStop(String finalStop) {
         if (finalStop != null && !finalStop.isBlank() && !finalStop.isEmpty()) {
             this.FinalStop = finalStop;
-            System.out.println("конечная остановка - " + finalStop);
         } else {
             System.out.println("введено неверное значение");
         }
@@ -69,13 +66,12 @@ public class Train extends Transport {
     public void setNumberOfWagons(int numberOfWagons) {
         if (numberOfWagons > 0) {
             this.NumberOfWagons = numberOfWagons;
-            System.out.println("количество вагонов - " + numberOfWagons);
         } else {
             System.out.println("введено неверное значение");
         }
     }
 
-    public Train(int fare, int travelTime, String nameOfTheDepartureStation,
+    public Train(int fare, double travelTime, String nameOfTheDepartureStation,
                  String finalStop, int numberOfWagons, String stamp, String model, int yearOfRelease,
                  String productionCountry, String bodyColor,
                  double maximumMovementSpeed) {
@@ -88,11 +84,18 @@ public class Train extends Transport {
     }
 
     public void trains() {
-        getFare();
-        getFinalStop();
-        getTravelTime();
-        getNameOfTheDepartureStation();
-        getNumberOfWagons();
+        System.out.println("марка - " + getStamp());
+        System.out.println("модель - " + getModel());
+        System.out.println("год производства - " + getYearOfRelease());
+        System.out.println("страна производства - " + getProductionCountry());
+        System.out.println("цвет корпуса - " + getBodyColor());
+        System.out.println("максимальная скорость двидения - " + getMaximumMovementSpeed());
+        System.out.println("стоимость проезда - " + getFare());
+        System.out.println("время поездки - " + getTravelTime() + " час.");
+        System.out.println("название станции отбытия - " + getNameOfTheDepartureStation());
+        System.out.println("конечная остановка - " + getFinalStop());
+        System.out.println("количество вагонов - " + getNumberOfWagons());
+        System.out.println();
 
     }
 }
