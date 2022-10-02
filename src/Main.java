@@ -1,3 +1,4 @@
+import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
 
@@ -41,5 +42,15 @@ public class Main {
 
         Lastohka.trains();
         Leningrad.trains();
+
+        Bus Bus1 = new Bus(300, 1, "вокзал 1",
+                "вокзал 2", 1, "BUS1", "A-001",
+                2011, "Россия", "белый", 70);
+        Bus Bus2 = new Bus(350, 1.3, "вокзал 3",
+                "вокзал 4", 1, "BUS2", "B-002",
+                2015, "Россия", "белый", 90);
+
+        Bus1.Buss();
+        Bus2.Buss();
     }
 }
