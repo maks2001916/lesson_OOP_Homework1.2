@@ -11,6 +11,16 @@ public class Train extends Transport {
         return fare;
     }
 
+    @Override
+    public void fill() {
+
+    }
+
+    @Override
+    protected void refill() {
+
+    }
+
     public void setFare(int fare) {
         if (fare > 0) {
             this.fare = fare;
@@ -74,8 +84,9 @@ public class Train extends Transport {
     public Train(int fare, double travelTime, String nameOfTheDepartureStation,
                  String finalStop, int numberOfWagons, String stamp, String model, int yearOfRelease,
                  String productionCountry, String bodyColor,
-                 double maximumMovementSpeed) {
-        super(stamp, model, yearOfRelease, productionCountry, bodyColor, maximumMovementSpeed);
+                 double maximumMovementSpeed, String fill) {
+        super(stamp, model, yearOfRelease, productionCountry, bodyColor,
+                maximumMovementSpeed, fill);
         this.fare = fare;
         this.TravelTime = travelTime;
         this.NameOfTheDepartureStation = nameOfTheDepartureStation;
@@ -95,7 +106,13 @@ public class Train extends Transport {
         System.out.println("название станции отбытия - " + getNameOfTheDepartureStation());
         System.out.println("конечная остановка - " + getFinalStop());
         System.out.println("количество вагонов - " + getNumberOfWagons());
+        if (getFill() == "дизель") {
+            System.out.println("топливо - " + getFill());
+        } else {
+            System.out.println("топливо - " + getFill() + " не подходит для этого транспорта");
+        }
         System.out.println();
 
     }
+
 }

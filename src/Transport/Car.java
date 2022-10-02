@@ -10,6 +10,16 @@ public class  Car extends Transport {
     private int numberOfSeats;  //количество мест
     private String typeOfRubber;  //тип резины
 
+    @Override
+    public void fill() {
+
+    }
+
+    @Override
+    protected void refill() {
+
+    }
+
     public static class key {
         private String remoteEngineStart;
         private String keylessAccess;
@@ -89,9 +99,10 @@ public class  Car extends Transport {
     public Car(String stamp, String model, double engineVolume, String bodyColor, int yearOfRelease,
                String productionCountry, String transmission, String bodyType,
                String registrationNumber, int numberOfSeats, String typeOfRubber,
-               double maximumMovementSpeed) {
+               double maximumMovementSpeed, String fill) {
 
-        super(stamp, model, yearOfRelease, productionCountry, bodyColor, maximumMovementSpeed);
+        super(stamp, model, yearOfRelease, productionCountry, bodyColor,
+                maximumMovementSpeed, fill);
         this.engineVolume = engineVolume;
         this.transmission = transmission;
         this.bodyType = bodyType;
@@ -198,6 +209,11 @@ public class  Car extends Transport {
         } else {
             System.out.println("резина - " + typeOfRubber);
         }
+        if (getFill() == "дизель" || getFill() == "бензин" || getFill() == "электричество") {
+            System.out.println("топливо - " + getFill());
+        } else {
+            System.out.println("топливо - " + getFill() + " не подходит для этого транспорта");
+        }
         System.out.println();
     }
 
@@ -205,7 +221,6 @@ public class  Car extends Transport {
         this.registrationNumber = registrationNumber;
         return registrationNumber;
     }
-
 
     public static String season() {
         String season = "лето";

@@ -1,16 +1,29 @@
 package Transport;
 
-public class Transport {
+public abstract class Transport {
     private String stamp;  //марка
     private String model;  //модель
     private int yearOfRelease;  //год выпуска
     private String productionCountry;  //страна производства
     private String bodyColor;  //цувет кузова
     private double maximumMovementSpeed;  //максимальная скорость передвижения
+    private String fill;  //топливо
 
     public String getBodyColor() {
         return bodyColor;
     }
+
+    public String getFill() {
+        return fill;
+    }
+
+    public abstract void fill();
+
+    public void setFill(String fill) {
+        this.fill = fill;
+    }
+
+    protected abstract void refill();
 
     public void setStamp(String stamp) {
         if (stamp != null && !stamp.isBlank() && !stamp.isEmpty()) {
@@ -34,7 +47,8 @@ public class Transport {
 
     public Transport(String stamp, String model, int yearOfRelease,
                      String productionCountry, String bodyColor,
-                     double maximumMovementSpeed) {
+                     double maximumMovementSpeed, String fill) {
+        this.fill = fill;
         this.stamp = stamp;
         this.model = model;
         this.yearOfRelease = yearOfRelease;
@@ -76,9 +90,4 @@ public class Transport {
         }
     }
 
-
-    public void transport() {
-
-
-    }
 }
