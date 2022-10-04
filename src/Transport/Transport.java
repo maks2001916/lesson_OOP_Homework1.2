@@ -1,29 +1,35 @@
 package Transport;
 
+import java.util.Objects;
+
 public abstract class Transport {
     private String stamp;  //марка
     private String model;  //модель
-    private int yearOfRelease;  //год выпуска
-    private String productionCountry;  //страна производства
-    private String bodyColor;  //цувет кузова
-    private double maximumMovementSpeed;  //максимальная скорость передвижения
-    private String fill;  //топливо
+    private double engineCapacity;  //объём двигателя
+//    private int yearOfRelease;  //год выпуска
+//    private String productionCountry;  //страна производства
+//    private String bodyColor;  //цувет кузова
+//    private double maximumMovementSpeed;  //максимальная скорость передвижения
+//    private String fill;  //топливо
 
-    public String getBodyColor() {
-        return bodyColor;
-    }
+//    public String getBodyColor() {
+//        return bodyColor;
+//    }
 
-    public String getFill() {
-        return fill;
-    }
+//    public String getFill() {
+//        return fill;
+//    }
 
-    public abstract void fill();
+//    public abstract void fill();
 
-    public void setFill(String fill) {
-        this.fill = fill;
-    }
+//    public void setFill(String fill) {
+//        this.fill = fill;
+//    }
 
-    protected abstract void refill();
+//    protected abstract void refill();
+
+    protected abstract void startMoving();
+    protected abstract void finishTheMovement();
 
     public void setStamp(String stamp) {
         if (stamp != null && !stamp.isBlank() && !stamp.isEmpty()) {
@@ -44,50 +50,78 @@ public abstract class Transport {
     public String getStamp() {
         return stamp;
     }
-
-    public Transport(String stamp, String model, int yearOfRelease,
-                     String productionCountry, String bodyColor,
-                     double maximumMovementSpeed, String fill) {
-        this.fill = fill;
-        this.stamp = stamp;
-        this.model = model;
-        this.yearOfRelease = yearOfRelease;
-        this.productionCountry = productionCountry;
-        this.bodyColor = bodyColor;
-        this.maximumMovementSpeed = maximumMovementSpeed;
-    }
-
-    public void setBodyColor(String bodyColor) {
-        if (bodyColor != null && !bodyColor.isEmpty() && !bodyColor.isBlank()) {
-            this.bodyColor = bodyColor;
-        } else {
-            this.bodyColor = "Введено не верное значение";
-        }
-    }
-
-
     public String getModel() {
         return model;
     }
-
-    public int getYearOfRelease() {
-        return yearOfRelease;
+    public Transport(String stamp, String model, double engineCapacity) {
+        this.stamp = stamp;
+        this.model = model;
+        this.engineCapacity = engineCapacity;
     }
 
-    public String getProductionCountry() {
-        return productionCountry;
+//    public Transport(String stamp, String model, int yearOfRelease,
+//                     String productionCountry, String bodyColor,
+//                     double maximumMovementSpeed, String fill) {
+//        this.fill = fill;
+//        this.stamp = stamp;
+//        this.model = model;
+//        this.yearOfRelease = yearOfRelease;
+//        this.productionCountry = productionCountry;
+//        this.bodyColor = bodyColor;
+//        this.maximumMovementSpeed = maximumMovementSpeed;
+//    }
+
+//    public void setBodyColor(String bodyColor) {
+//        if (bodyColor != null && !bodyColor.isEmpty() && !bodyColor.isBlank()) {
+//            this.bodyColor = bodyColor;
+//        } else {
+//            this.bodyColor = "Введено не верное значение";
+//        }
+//    }
+
+
+
+
+//    public int getYearOfRelease() {
+//        return yearOfRelease;
+//    }
+
+//    public String getProductionCountry() {
+//        return productionCountry;
+//    }
+
+//    public double getMaximumMovementSpeed() {
+//        return maximumMovementSpeed;
+//    }
+
+//    public void setMaximumMovementSpeed(double maximumMovementSpeed) {
+//        if (maximumMovementSpeed > 0) {
+//            this.maximumMovementSpeed = maximumMovementSpeed;
+//        } else {
+//            this.maximumMovementSpeed = 1;
+//        }
+//    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport transport = (Transport) o;
+        return Double.compare(transport.engineCapacity, engineCapacity) == 0 && Objects.equals(stamp, transport.stamp) && Objects.equals(model, transport.model);
     }
 
-    public double getMaximumMovementSpeed() {
-        return maximumMovementSpeed;
+    @Override
+    public int hashCode() {
+        return Objects.hash(stamp, model, engineCapacity);
     }
 
-    public void setMaximumMovementSpeed(double maximumMovementSpeed) {
-        if (maximumMovementSpeed > 0) {
-            this.maximumMovementSpeed = maximumMovementSpeed;
-        } else {
-            this.maximumMovementSpeed = 1;
-        }
+    @Override
+    public String toString() {
+        return "транспорт{" +
+                "мрка - '" + stamp + '\'' +
+                ", модель - '" + model + '\'' +
+                ", объём двигателя - " + engineCapacity +
+                '}';
     }
-
 }
