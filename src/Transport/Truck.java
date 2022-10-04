@@ -1,6 +1,6 @@
 package Transport;
 
-public class Truck extends Transport{
+public class Truck extends Transport implements Competing{
 
     @Override
     protected void startMoving() {
@@ -16,4 +16,24 @@ public class Truck extends Transport{
         super(stamp, model, engineCapacity);
     }
 
+    @Override
+    public void pitStop() {
+        System.out.println("грузовая машина пересекла финишную линию");
+
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("лучшее время - 7 мин.");
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("максимальная скорость - 150 км/ч");
+    }
+    public void info() {
+        pitStop();
+        maxSpeed();
+        bestLapTime();
+    }
 }

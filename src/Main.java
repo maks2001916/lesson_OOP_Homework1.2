@@ -18,16 +18,28 @@ public class Main {
         Bus bus3 = new Bus("stamp c", "model c", 1.4);
         Bus bus4 = new Bus("stamp d", "model d", 1.5);
         System.out.println(car1);
+        car1.info();
         System.out.println(car2);
+        car2.info();
         System.out.println(car3);
+        car3.info();
         System.out.println(car4);
+        car4.info();
         System.out.println(truck1);
+        truck1.info();
         System.out.println(truck2);
+        truck2.info();
         System.out.println(truck3);
+        truck3.info();
         System.out.println(truck4);
+        truck4.info();
         System.out.println(bus1);
+        bus1.info();
         System.out.println(bus2);
+        bus2.info();
         System.out.println(bus3);
+        bus3.info();
         System.out.println(bus4);
+        bus4.info();
     }
 }
