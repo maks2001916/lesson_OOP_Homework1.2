@@ -1,5 +1,6 @@
 import Transport.Bus;
 import Transport.Car;
+import Transport.Driver;
 import Transport.Truck;
 
 public class Main {
@@ -41,5 +42,9 @@ public class Main {
         bus3.info();
         System.out.println(bus4);
         bus4.info();
+
+        Driver<Car> Ivan = new Driver("Иванов Иван Иванович", 5, true);
+        Ivan.go(car1);
+
     }
 }

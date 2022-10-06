@@ -1,8 +1,6 @@
 package Transport;
 
-import java.util.regex.Pattern;
-
-public class  Car extends Transport implements Competing {
+public class  Car extends Transport implements Competing, ADriver {
     @Override
     protected void startMoving() {
         System.out.println("легковой автомоюиль начал движение");
@@ -32,9 +30,19 @@ public class  Car extends Transport implements Competing {
     public void maxSpeed() {
         System.out.println("максимальная скорость - 170 км/ч");
     }
+
+    public void name() {
+        getModel();
+    }
+
     public void info() {
         pitStop();
         maxSpeed();
         bestLapTime();
+    }
+
+    @Override
+    public String categoryA() {
+        return getModel();
     }
 }
