@@ -16,17 +16,21 @@ public class Driver<T extends Transport & Competing> {
 
     public void go(T one) {
         System.out.println("водитель - " + fio + " управляет автомобилем car и будет участвовать в заезде " );
-
+        go();
+        stop();
+        refuelTheCar();
     }
 
-
+    public void go() {
+        System.out.println("водитель начал движение");
+    }
 
     public void stop() {
-
+        System.out.println("водитель остановился");
     }
 
     public void refuelTheCar() {
-
+        System.out.println("водитель заправил авто");
     }
 
 
