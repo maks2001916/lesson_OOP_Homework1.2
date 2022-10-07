@@ -1,6 +1,5 @@
 import Transport.Bus;
 import Transport.Car;
-import Transport.Driver;
 import Transport.Truck;
 
 public class Main {

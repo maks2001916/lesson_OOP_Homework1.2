@@ -1,7 +1,7 @@
-package Transport;
+import Transport.Transport;
 
 import java.util.Objects;
-
+import Transport.Competing;
 
 public class Driver<T extends Transport & Competing> {
     private String fio;
@@ -19,8 +19,7 @@ public class Driver<T extends Transport & Competing> {
 
     }
 
-    private void name() {
-    }
+
 
     public void stop() {
 
