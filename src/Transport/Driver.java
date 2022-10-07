@@ -3,20 +3,20 @@ package Transport;
 import java.util.Objects;
 
 
-public class Driver<T extends Car &  ADriver> {
-    private String FIO;
+public class Driver<T extends Transport & Competing> {
+    private String fio;
     private int experience;
     private boolean driversLicense;
 
-    public Driver(String FIO, int experience, boolean driversLicense) {
-        this.FIO = FIO;
+    public Driver(String fio, int experience, boolean driversLicense) {
+        this.fio = fio;
         this.experience = experience;
         this.driversLicense = driversLicense;
     }
 
     public void go(T one) {
-        System.out.println("водитель - " + FIO + " управляет автомобилем car и будет участвовать в заезде " );
-        name();
+        System.out.println("водитель - " + fio + " управляет автомобилем car и будет участвовать в заезде " );
+
     }
 
     private void name() {
@@ -31,8 +31,8 @@ public class Driver<T extends Car &  ADriver> {
     }
 
 
-    public String getFIO() {
-        return FIO;
+    public String getFio() {
+        return fio;
     }
 
     public int getExperience() {
@@ -48,18 +48,18 @@ public class Driver<T extends Car &  ADriver> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Driver driver = (Driver) o;
-        return experience == driver.experience && driversLicense == driver.driversLicense && Objects.equals(FIO, driver.FIO);
+        return experience == driver.experience && driversLicense == driver.driversLicense && Objects.equals(fio, driver.fio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(FIO, experience, driversLicense);
+        return Objects.hash(fio, experience, driversLicense);
     }
 
     @Override
     public String toString() {
         return "Driver{" +
-                "FIO='" + FIO + '\'' +
+                "FIO='" + fio + '\'' +
                 ", experience=" + experience +
                 ", driversLicense=" + driversLicense +
                 '}';

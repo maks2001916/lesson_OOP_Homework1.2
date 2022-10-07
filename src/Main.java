@@ -43,7 +43,7 @@ public class Main {
         System.out.println(bus4);
         bus4.info();
 
-        Driver<Car> Ivan = new Driver("Иванов Иван Иванович", 5, true);
+        Driver<Car> Ivan = new Driver("иванов иван иванович", 5, true);
         Ivan.go(car1);
 
     }

@@ -1,5 +1,5 @@
 package Transport;
 
 public interface BDriver {
-    public Truck categoryС();
+    public String categoryA();
 }

@@ -11,7 +11,7 @@ public abstract class Transport {
     protected abstract void finishTheMovement();
 
     public void setStamp(String stamp) {
-        if (stamp != null && !stamp.isBlank() && !stamp.isEmpty()) {
+        if (stamp != null && !stamp.isBlank()) {
             this.stamp = stamp;
         } else {
             this.stamp = "default";
@@ -19,7 +19,7 @@ public abstract class Transport {
     }
 
     public void setModel(String model) {
-        if (model != null && !model.isBlank() && !model.isEmpty()) {
+        if (model != null && !model.isBlank()) {
             this.model = model;
         } else {
             this.model = "default";
@@ -33,8 +33,8 @@ public abstract class Transport {
         return model;
     }
     public Transport(String stamp, String model, double engineCapacity) {
-        this.stamp = stamp;
-        this.model = model;
+        getModel();
+        getStamp();
         this.engineCapacity = engineCapacity;
     }
 

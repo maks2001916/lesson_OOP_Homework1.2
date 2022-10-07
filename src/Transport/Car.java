@@ -1,6 +1,6 @@
 package Transport;
 
-public class  Car extends Transport implements Competing, ADriver {
+public class  Car extends Transport implements Competing, BDriver {
     @Override
     protected void startMoving() {
         System.out.println("легковой автомоюиль начал движение");
