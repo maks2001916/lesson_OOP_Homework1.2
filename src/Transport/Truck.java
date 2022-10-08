@@ -2,6 +2,8 @@ package Transport;
 
 public class Truck extends Transport implements Competing{
 
+    public enum loadCapacity {N1, N2, N3}
+
     @Override
     protected void startMoving() {
         System.out.println("грузовой автомоюиль начал движение");

@@ -1,6 +1,10 @@
 package Transport;
 
 public class  Car extends Transport implements Competing {
+
+    public enum bodyType {SEDAN, HATCHBACK, COMPARTMENT, STATION_WAGON, OFF_ROAD_VEHICLEOFF,
+        CROSSOVER, PICKUP_TRUCK, VEN, MINIVAN}
+
     @Override
     protected void startMoving() {
         System.out.println("легковой автомоюиль начал движение");

@@ -1,6 +1,9 @@
 package Transport;
 
 public class Bus extends Transport implements  Competing{
+
+    public enum capacity {ESPECIALLY_SMALL, SMALL, AVERAGE, BIG, ESPECIALLY_BIG}
+
     public static final String PIT_STOP = "автобус пересекает финишную черту";
 
     @Override
