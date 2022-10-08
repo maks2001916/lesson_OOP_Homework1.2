@@ -1,6 +1,6 @@
 package Transport;
 
-public class  Car extends Transport implements Competing, BDriver {
+public class  Car extends Transport implements Competing {
     @Override
     protected void startMoving() {
         System.out.println("легковой автомоюиль начал движение");
@@ -41,8 +41,4 @@ public class  Car extends Transport implements Competing, BDriver {
         bestLapTime();
     }
 
-    @Override
-    public String categoryA() {
-        return getModel();
-    }
 }

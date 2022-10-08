@@ -42,8 +42,11 @@ public class Main {
         System.out.println(bus4);
         bus4.info();
 
-        Driver<Car> Ivan = new Driver("иванов иван иванович", 5, true);
-        Ivan.go(car1);
+        Driver<Car> ivan  = new Driver<Car>("иванов иван иванович", 5, true);
+        ivan.go(car1);
+        ivan.stop(car2);
+        ivan.equals(car3);
+
 
     }
 }
