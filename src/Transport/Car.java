@@ -2,8 +2,32 @@ package Transport;
 
 public class  Car extends Transport implements Competing {
 
-    public enum bodyType {SEDAN, HATCHBACK, COMPARTMENT, STATION_WAGON, OFF_ROAD_VEHICLEOFF,
-        CROSSOVER, PICKUP_TRUCK, VEN, MINIVAN}
+    public enum bodyType {
+        SEDAN("седан"),
+        HATCHBACK("хечбек"),
+        COMPARTMENT("купе"), 
+        STATION_WAGON("универсал"),
+        OFF_ROAD_VEHICLEOFF("внедорожник"),
+        CROSSOVER("кроссовер"),
+        PICKUP_TRUCK("пикап"),
+        VEN("фургон"),
+        MINIVAN("минивен");
+
+        private String determineTheTypeOfCar;
+
+        bodyType(String determineTheTypeOfCar) {
+            this.determineTheTypeOfCar = determineTheTypeOfCar;
+        }
+
+        public String getDetermineTheTypeOfCar() {
+            return determineTheTypeOfCar;
+        }
+
+        public void setDetermineTheTypeOfCar(String determineTheTypeOfCar) {
+            this.determineTheTypeOfCar = determineTheTypeOfCar;
+        }
+    }
+
 
     @Override
     protected void startMoving() {
