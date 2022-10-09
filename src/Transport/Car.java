@@ -13,6 +13,15 @@ public class  Car extends Transport implements Competing {
         VEN("фургон"),
         MINIVAN("минивен");
 
+        public static bodyType one(String determineTheTypeOfCar) {
+            for (bodyType tupe : values()) {
+                if (tupe.getDetermineTheTypeOfCar().equals(determineTheTypeOfCar)) {
+                    return tupe;
+                }
+            }
+            return null;
+        }
+
         private String determineTheTypeOfCar;
 
         bodyType(String determineTheTypeOfCar) {
@@ -27,6 +36,7 @@ public class  Car extends Transport implements Competing {
             this.determineTheTypeOfCar = determineTheTypeOfCar;
         }
     }
+
 
 
     @Override
