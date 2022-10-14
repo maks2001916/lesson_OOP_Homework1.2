@@ -1,6 +1,10 @@
 package Transport;
 
+import java.sql.Driver;
+
 public class  Car extends Transport implements Competing {
+
+    public String typeOfRubber;  //тип резины
 
     public enum bodyType {
         SEDAN("седан"),
@@ -13,6 +17,8 @@ public class  Car extends Transport implements Competing {
         VEN("фургон"),
         MINIVAN("минивен");
 
+
+
         public static bodyType one(String determineTheTypeOfCar) {
             for (bodyType tupe : values()) {
                 if (tupe.getDetermineTheTypeOfCar().equals(determineTheTypeOfCar)) {
@@ -23,6 +29,10 @@ public class  Car extends Transport implements Competing {
         }
 
         private String determineTheTypeOfCar;
+
+
+
+
 
         bodyType(String determineTheTypeOfCar) {
             this.determineTheTypeOfCar = determineTheTypeOfCar;
@@ -36,8 +46,15 @@ public class  Car extends Transport implements Competing {
             this.determineTheTypeOfCar = determineTheTypeOfCar;
         }
     }
-
-
+    @Override
+    public void passDiagnostics() {
+        if (getTypeOfRubber() == "Зима") {
+            throw new RuntimeException("Автомобиль не прошёл диагностику");
+        }
+    }
+    public String getTypeOfRubber() {
+        return typeOfRubber;
+    }
 
     @Override
     protected void startMoving() {
@@ -49,8 +66,10 @@ public class  Car extends Transport implements Competing {
         System.out.println("легковой автомоюиль закончил движение");
     }
 
-    public Car(String stamp, String model, double engineCapacity) {
+
+    public Car(String stamp, String model, double engineCapacity, String typeOfRubber) {
         super(stamp, model, engineCapacity);
+        this.typeOfRubber = typeOfRubber;
     }
 
     @Override

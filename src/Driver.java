@@ -6,9 +6,9 @@ import Transport.Competing;
 public class Driver<T extends Transport & Competing> {
     private String fio;
     private int experience;
-    private boolean driversLicense;
+    private char driversLicense;
 
-    public Driver(String fio, int experience, boolean driversLicense) {
+    public Driver(String fio, int experience, char driversLicense) {
         this.fio = fio;
         this.experience = experience;
         this.driversLicense = driversLicense;
@@ -17,11 +17,16 @@ public class Driver<T extends Transport & Competing> {
     public void go(T one) {
         System.out.println("водитель - " + fio + " управляет автомобилем " + one.toString() +
                           "и будет участвовать в заезде " );
+        if (getDriversLicense() != 'B' || getDriversLicense() != 'C') {
+            System.out.println("Необходимо указать тип прав");
+
+        }
     }
 
     public void stop(T car) {
         car.pitStop();
         System.out.println("водитель остановился");
+        car.passDiagnostics();
     }
 
     public void refuelTheCar(T car) {
@@ -38,7 +43,7 @@ public class Driver<T extends Transport & Competing> {
         return experience;
     }
 
-    public boolean isDriversLicense() {
+    public char getDriversLicense() {
         return driversLicense;
     }
 

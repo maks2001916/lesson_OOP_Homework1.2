@@ -5,14 +5,14 @@ import Transport.Truck;
 public class Main {
     public static void main(String[] args)
     {
-        Car car1 = new Car("stamp A", "model A", 1.0);
-        Car car2 = new Car("stamp B", "model B", 1.1);
-        Car car3 = new Car("stamp C", "model C", 1.2);
-        Car car4 = new Car("stamp D", "model D", 1.3);
-        Truck truck1 = new Truck("stamp 1", "model 1", 1.4);
-        Truck truck2 = new Truck("stamp 2", "model 2", 1.5);
-        Truck truck3 = new Truck("stamp 3", "model 3", 1.6);
-        Truck truck4 = new Truck("stamp 4", "model 4", 1.7);
+        Car car1 = new Car("stamp A", "model A", 1.0, "Зима");
+        Car car2 = new Car("stamp B", "model B", 1.1, "Зима");
+        Car car3 = new Car("stamp C", "model C", 1.2, "Зима");
+        Car car4 = new Car("stamp D", "model D", 1.3, "Зима");
+        Truck truck1 = new Truck("stamp 1", "model 1", 1.4, "Лето");
+        Truck truck2 = new Truck("stamp 2", "model 2", 1.5, "Лето");
+        Truck truck3 = new Truck("stamp 3", "model 3", 1.6, "Лето");
+        Truck truck4 = new Truck("stamp 4", "model 4", 1.7, "Лето");
         Bus bus1 = new Bus("stamp a", "model a", 1.2);
         Bus bus2 = new Bus("stamp b", "model b", 1.3);
         Bus bus3 = new Bus("stamp c", "model c", 1.4);
@@ -42,10 +42,11 @@ public class Main {
         System.out.println(bus4);
         bus4.info();
 
-        Driver<Car> ivan  = new Driver<Car>("иванов иван иванович", 5, true);
+        Driver<Car> ivan  = new Driver<Car>("иванов иван иванович", 5, 'b');
         ivan.go(car1);
         ivan.stop(car2);
         ivan.equals(car3);
+
 
 
     }

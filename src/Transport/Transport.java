@@ -7,8 +7,11 @@ public abstract class Transport {
     private String model;  //модель
     private double engineCapacity;  //объём двигателя
 
+
     protected abstract void startMoving();
     protected abstract void finishTheMovement();
+
+
 
     public void setStamp(String stamp) {
         if (stamp != null && !stamp.isBlank()) {
@@ -26,6 +29,8 @@ public abstract class Transport {
         }
     }
 
+
+
     public String getStamp() {
         return stamp;
     }
@@ -36,6 +41,7 @@ public abstract class Transport {
         getModel();
         getStamp();
         this.engineCapacity = engineCapacity;
+
     }
 
     @Override
@@ -54,8 +60,8 @@ public abstract class Transport {
     @Override
     public String toString() {
         return "транспорт{" +
-                "мрка - '" + stamp + '\'' +
-                ", модель - '" + model + '\'' +
+                "марка - '" + getStamp() + '\'' +
+                ", модель - '" + getModel() + '\'' +
                 ", объём двигателя - " + engineCapacity +
                 '}';
     }
