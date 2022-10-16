@@ -1,6 +1,9 @@
 import Transport.Bus;
 import Transport.Car;
+import Transport.Transport;
 import Transport.Truck;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args)
@@ -43,11 +46,24 @@ public class Main {
         bus4.info();
 
         Driver<Car> ivan  = new Driver<Car>("иванов иван иванович", 5, 'b');
+        Driver<Truck> nikolai = new Driver<Truck>("Николаев Николай Николаевич", 8, 'c');
         ivan.go(car1);
         ivan.stop(car2);
         ivan.equals(car3);
 
+        Mechanic mechanic1 = new Mechanic("Иванов Иван", "омпания 1", 'B');
+        Mechanic mechanic2 = new Mechanic("Владимиров владимир влвдимирович", "компания 2", 'C');
+        Sponsor sponsor1 = new Sponsor("Дмитрий");
+        Sponsor sponsor2 = new Sponsor("Александр");
 
-
+        mechanic1.getMechanic().add(car1);
+        mechanic1.getMechanic().add(car2);
+        mechanic2.getMechanic().add(bus1);
+        mechanic2.getMechanic().add(bus2);
+        mechanic1.getSponsors().add(sponsor1);
+        mechanic2.getSponsors().add(sponsor2);
+        mechanic1.getDrivers().add(ivan);
+        mechanic1.getMechanics().add(mechanic1);
+        mechanic1.getMechanics().add(mechanic2);
     }
 }
