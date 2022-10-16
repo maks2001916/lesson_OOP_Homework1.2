@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args)
     {
-        Car car1 = new Car("stamp A", "model A", 1.0, "Зима");
-        Car car2 = new Car("stamp B", "model B", 1.1, "Зима");
-        Car car3 = new Car("stamp C", "model C", 1.2, "Зима");
-        Car car4 = new Car("stamp D", "model D", 1.3, "Зима");
+        Car car1 = new Car("stamp A", "model A", 1.0, "Лето");
+        Car car2 = new Car("stamp B", "model B", 1.1, "Лето");
+        Car car3 = new Car("stamp C", "model C", 1.2, "Лето");
+        Car car4 = new Car("stamp D", "model D", 1.3, "Лето");
         Truck truck1 = new Truck("stamp 1", "model 1", 1.4, "Лето");
         Truck truck2 = new Truck("stamp 2", "model 2", 1.5, "Лето");
         Truck truck3 = new Truck("stamp 3", "model 3", 1.6, "Лето");
@@ -56,6 +56,11 @@ public class Main {
         Sponsor sponsor1 = new Sponsor("Дмитрий");
         Sponsor sponsor2 = new Sponsor("Александр");
 
+        ServiceStation<Transport> station1 = new ServiceStation<>();
+        station1.addACarToTheQueue(car1);
+        station1.addACarToTheQueue(bus1);
+        station1.carryOutATechnicalInspectionOfTheCar();
+
         mechanic1.getMechanic().add(car1);
         mechanic1.getMechanic().add(car2);
         mechanic2.getMechanic().add(bus1);
@@ -65,5 +70,7 @@ public class Main {
         mechanic1.getDrivers().add(ivan);
         mechanic1.getMechanics().add(mechanic1);
         mechanic1.getMechanics().add(mechanic2);
+
+
     }
 }
