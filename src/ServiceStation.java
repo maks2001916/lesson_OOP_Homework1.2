@@ -1,20 +1,26 @@
 import Transport.Transport;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class ServiceStation<T extends Transport> {
-    private Queue<T> queue = new LinkedList<>();
+    private Set<T> queue = new HashSet<>();
 
     public void addACarToTheQueue(T car) {
-        queue.offer(car);
+        queue.add(car);
     }
 
     public void carryOutATechnicalInspectionOfTheCar() {
-        T car = queue.poll();
+        T car = null;
+        for (T num: queue ) {
+            car = num;
+            break;
+        }
+
         if (car != null) {
             System.out.println("автомобиль - " + car + " проходит тех обслуживание");
-            carryOutATechnicalInspectionOfTheCar();
         }
     }
 }
