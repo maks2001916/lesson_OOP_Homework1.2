@@ -1,7 +1,6 @@
-import Transport.Transport;
+package community;
 
 import java.util.Objects;
-import Transport.Competing;
 
 public class Sponsor {
     private String name;
@@ -33,7 +32,7 @@ public class Sponsor {
 
     @Override
     public String toString() {
-        return "Sponsor{" +
+        return "community.Sponsor{" +
                 "name='" + name + '\'' +
                 '}';
     }

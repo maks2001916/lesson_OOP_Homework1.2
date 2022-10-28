@@ -1,7 +1,9 @@
+package community;
+
+import Transport.Competing;
 import Transport.Transport;
 
 import java.util.Objects;
-import Transport.Competing;
 
 public class Driver<T extends Transport & Competing> {
     private String fio;
@@ -17,6 +19,7 @@ public class Driver<T extends Transport & Competing> {
     public void go(T one) {
         System.out.println("водитель - " + fio + " управляет автомобилем " + one.toString() +
                           "и будет участвовать в заезде " );
+
         if (getDriversLicense() != 'B' || getDriversLicense() != 'C') {
             System.out.println("Необходимо указать тип прав");
 
@@ -25,6 +28,7 @@ public class Driver<T extends Transport & Competing> {
 
     public void stop(T car) {
         car.pitStop();
+        car.
         System.out.println("водитель остановился");
         car.passDiagnostics();
     }
@@ -62,7 +66,7 @@ public class Driver<T extends Transport & Competing> {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "community.Driver{" +
                 "FIO='" + fio + '\'' +
                 ", experience=" + experience +
                 ", driversLicense=" + driversLicense +

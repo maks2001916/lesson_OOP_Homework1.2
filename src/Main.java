@@ -2,8 +2,9 @@ import Transport.Bus;
 import Transport.Car;
 import Transport.Transport;
 import Transport.Truck;
-
-import java.util.ArrayList;
+import community.Driver;
+import community.Mechanic;
+import community.Sponsor;
 
 public class Main {
     public static void main(String[] args)
