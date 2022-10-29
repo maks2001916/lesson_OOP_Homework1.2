@@ -3,6 +3,7 @@ package Transport;
 import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Set;
 
 import community.Mechanic;
 import community.Sponsor;
@@ -11,10 +12,10 @@ public abstract class Transport {
     private String stamp;  //марка
     private String model;  //модель
     private double engineCapacity;  //объём двигателя
-    private ArrayList<Transport> mechanic;
-    private ArrayList<Sponsor> sponsors;
-    private ArrayList<Driver> drivers;
-    private ArrayList<Mechanic> mechanics;
+    private Set<Transport> mechanic;
+    private Set<Sponsor> sponsors;
+    private Set<Driver> drivers;
+    private Set<Mechanic> mechanics;
 
 
     protected abstract void startMoving();
@@ -47,16 +48,10 @@ public abstract class Transport {
         return model;
     }
 
-    public Transport(String stamp, String model, double engineCapacity,
-                     ArrayList<Transport> mechanic, ArrayList<Sponsor> sponsors,
-                     ArrayList<Driver> drivers, ArrayList<Mechanic> mechanics) {
+    public Transport(String stamp, String model, double engineCapacity) {
         this.stamp = stamp;
         this.model = model;
         this.engineCapacity = engineCapacity;
-        this.mechanic = mechanic;
-        this.sponsors = sponsors;
-        this.drivers = drivers;
-        this.mechanics = mechanics;
     }
 
     @Override

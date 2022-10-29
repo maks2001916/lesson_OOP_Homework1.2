@@ -28,7 +28,8 @@ public class Driver<T extends Transport & Competing> {
 
     public void stop(T car) {
         car.pitStop();
-        car.
+        car.bestLapTime();
+        car.maxSpeed();
         System.out.println("водитель остановился");
         car.passDiagnostics();
     }
